@@ -27,7 +27,7 @@ function RejoinsAsso() {
           <span className="ml-[0.5ch] relative inline-block p-1">
             <span
               style={{width: `${underlineWidth}%`}}
-              className="absolute z-30 overflow-hidden top-0 left-0 h-full text-black p-1 drop-shadow"
+              className="absolute z-30 overflow-hidden top-0 left-0 h-full text-black p-1 drop-shadow whitespace-nowrap"
             >
               1€ symbolique
             </span>
