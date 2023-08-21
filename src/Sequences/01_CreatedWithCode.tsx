@@ -1,10 +1,9 @@
 import {AbsoluteFill} from 'remotion';
-import TypingText from './CreatedWithCode/TypingText';
+import TypingText from './01_CreatedWithCode/TypingText';
 import {IbmPlexMonoFont} from '../shared/fonts';
 import {useInterpolate} from 'remotion-time';
 
-export type CreatedWithCodeProps = {};
-function CreatedWithCode({}: CreatedWithCodeProps) {
+function CreatedWithCode() {
   const opacity = useInterpolate(
     ['start', 'end - 1.2s', 'end - 1s', 'end'],
     [1, 1, 0, 0]
