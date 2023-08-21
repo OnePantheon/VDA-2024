@@ -21,7 +21,7 @@ function Main() {
       <Sequence from={t`13.5s`} durationInFrames={t`2.5s`} name="Rejoins asso">
         <RejoinsAsso />
       </Sequence>
-      <Sequence from={t`11.5s`} durationInFrames={t`2.5s`} name="Envie de ...">
+      <Sequence from={t`11.5s`} durationInFrames={t`3s`} name="Envie de ...">
         <EnvieDe />
       </Sequence>
     </>
