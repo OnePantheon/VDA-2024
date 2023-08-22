@@ -1,9 +1,11 @@
-import {Img} from 'remotion';
+import {Img, Sequence} from 'remotion';
 import {PoppinsFont} from '../shared/fonts';
 import {staticFile, Easing, AbsoluteFill} from 'remotion';
-import {useInterpolate} from 'remotion-time';
+import {useInterpolate, useTime} from 'remotion-time';
+import {Video} from 'remotion';
 
 function RejoinsAsso() {
+  const t = useTime();
   const translateEntrance = useInterpolate(['start', 'start + 0.4s'], [-20, 0], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
@@ -14,9 +16,11 @@ function RejoinsAsso() {
     extrapolateRight: 'clamp',
     easing: Easing.in(Easing.exp),
   });
+  const CampusAsset = staticFile('06_Campus.png');
+  const CombienAsset = staticFile('Combien.mp4');
   return (
     <AbsoluteFill style={{fontFamily: PoppinsFont}} className="text-white">
-      <Img src={staticFile('06_Campus.png')} />
+      <Img src={CampusAsset} />
       <div
         style={{transform: `translateX(${translateEntrance}%)`}}
         className="absolute w-11/12 h-full top-0 right-0 flex flex-col justify-center items-start"
@@ -36,6 +40,10 @@ function RejoinsAsso() {
           </span>
         </p>
       </div>
+      <Sequence from={t`2s`} durationInFrames={t`1.3s`}>
+        <Video src={CombienAsset} className="absolute z-40 w-1/3 h-auto bottom-20 left-16" />
+        <p className="absolute bottom-20 left-16 z-50 text-4xl w-1/3 text-center font-bold">Combien ??</p>
+      </Sequence>
     </AbsoluteFill>
   );
 }

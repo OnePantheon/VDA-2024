@@ -6,12 +6,12 @@ function EnvieDe() {
   const t = useTime();
   const frame = useCurrentFrame();
   const backgroundColor = interpolateColors(frame, [t`end - 0.5s`, t`end - 0.1s`], ['#0e2a47ff', '#0e2a4700']);
-  const translateY = useInterpolate(['end - 0.5s', 'end - 0.1s'], [0, -60], {
+  const translateY = useInterpolate(['end - 0.7s', 'end - 0.3s'], [0, -60], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
     easing: Easing.in(Easing.ease),
   });
-  const opacity = useInterpolate(['end - 0.5s', 'end - 0.3s'], [1, 0], {
+  const opacity = useInterpolate(['end - 0.7s', 'end - 0.5s'], [1, 0], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   }) as number;
