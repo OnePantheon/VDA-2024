@@ -1,15 +1,15 @@
 import {AbsoluteFill} from 'remotion';
 import {PoppinsFont} from '../shared/fonts';
 
-function EtBeneficie() {
+function X() {
   return (
     <AbsoluteFill
       style={{backgroundColor: '#0e2a47', fontFamily: PoppinsFont}}
       className="text-white text-8xl font-medium"
     >
-      <p>Et obtiens...</p>
+      <p>Placeholder</p>
     </AbsoluteFill>
   );
 }
 
-export default EtBeneficie;
+export default X;

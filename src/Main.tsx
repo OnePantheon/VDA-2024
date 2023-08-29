@@ -1,10 +1,18 @@
-import {Sequence, Audio, staticFile, Series, Video, AbsoluteFill} from 'remotion';
+import {Sequence, Audio, staticFile, Series, Video, AbsoluteFill, Img} from 'remotion';
 import {useTime} from 'remotion-time';
 import LogoReveal from './Sequences/02_LogoReveal';
 import CreatedWithCode from './Sequences/01_CreatedWithCode';
 import EnvieDe from './Sequences/04_EnvieDe';
 import RejoinsAsso from './Sequences/06_RejoinsAsso';
-import EtBeneficie from './Sequences/07_EtBeneficie';
+import EtObtiens from './Sequences/07_EtObtiens';
+import UnSuivi from './Sequences/08_UnSuivi';
+import DesRessources from './Sequences/11_devkit';
+import DesLicences from './Sequences/12_Licences';
+import DesCours from './Sequences/13_Cours';
+import Jpo from './Sequences/14_JPO';
+import DesEvents from './Sequences/15_Events';
+import ShowcaseTitle from './Sequences/16_Showcase';
+import Discord from './Sequences/24_Discord';
 
 function Main() {
   const t = useTime();
@@ -28,47 +36,33 @@ function Main() {
       </Sequence>
       <Series>
         <Series.Sequence offset={t`17s`} durationInFrames={t`1s`} name="Et obtiens...">
-          <EtBeneficie />
+          <EtObtiens />
         </Series.Sequence>
         <Series.Sequence durationInFrames={t`1.7s`} name="Idée appli">
-          <AbsoluteFill style={{backgroundColor: '#0e2a47'}}>
-            <p className="text-9xl">Un suivi pour réaliser ton idée d'application, site ou jeu</p>
-          </AbsoluteFill>
+          <UnSuivi />
         </Series.Sequence>
         <Series.Sequence durationInFrames={t`1.7s`} name="Serv et ressources">
-          <AbsoluteFill style={{backgroundColor: '#0e2a47'}}>
-            <p className="text-9xl">Un serveur et des ressources à disposition</p>
-          </AbsoluteFill>
+          <DesRessources />
         </Series.Sequence>
         <Series.Sequence durationInFrames={t`1.7s`} name="Licences de dév">
-          <AbsoluteFill style={{backgroundColor: '#0e2a47'}}>
-            <p className="text-9xl">Des licences de développement</p>
-          </AbsoluteFill>
+          <DesLicences />
         </Series.Sequence>
         <Series.Sequence durationInFrames={t`1.7s`} name="Mais c'est super ça">
-          <AbsoluteFill>
+          <AbsoluteFill style={{backgroundColor: '#0e2a47'}}>
             <Video src={staticFile('ahBahJsuisRavi.mp4')} startFrom={t`3s`} endAt={t`4.8s`} />
           </AbsoluteFill>
         </Series.Sequence>
         <Series.Sequence durationInFrames={t`1.6s`} name="Suis nos cours">
-          <AbsoluteFill style={{backgroundColor: '#0e2a47'}}>
-            <p className="text-9xl">Suis nos cours et TPs</p>
-          </AbsoluteFill>
+          <DesCours />
         </Series.Sequence>
         <Series.Sequence durationInFrames={t`1.7s`} name="Ateliers JPO">
-          <AbsoluteFill style={{backgroundColor: '#0e2a47'}}>
-            <p className="text-9xl">Ateliers JPO</p>
-          </AbsoluteFill>
+          <Jpo />
         </Series.Sequence>
         <Series.Sequence durationInFrames={t`1.6s`} name="Events">
-          <AbsoluteFill style={{backgroundColor: '#0e2a47'}}>
-            <p className="text-9xl">Events</p>
-          </AbsoluteFill>
+          <DesEvents />
         </Series.Sequence>
         <Series.Sequence durationInFrames={t`1.2s`} name="Showcase">
-          <AbsoluteFill style={{backgroundColor: '#0e2a47'}}>
-            <p className="text-9xl">Showcase</p>
-          </AbsoluteFill>
+          <ShowcaseTitle />
         </Series.Sequence>
         <Series.Sequence durationInFrames={t`3.3s`} name="PJ 1">
           <AbsoluteFill style={{backgroundColor: '#0e2a47'}}>
@@ -91,8 +85,8 @@ function Main() {
           </AbsoluteFill>
         </Series.Sequence>
         <Series.Sequence durationInFrames={t`2.5s`} name="Efrei Craft">
-          <AbsoluteFill style={{backgroundColor: '#0e2a47'}}>
-            <p className="text-9xl">Efrei Craft</p>
+          <AbsoluteFill style={{backgroundColor: '#4392B2'}}>
+            <Img src={staticFile('21_EfreiCraft.png')} />
           </AbsoluteFill>
         </Series.Sequence>
         <Series.Sequence durationInFrames={t`4.5s`} name="Minecraft 1 et 2">
@@ -102,19 +96,16 @@ function Main() {
           </AbsoluteFill>
         </Series.Sequence>
         <Series.Sequence durationInFrames={t`6s`} name="Discord 1 et 2">
-          <AbsoluteFill style={{backgroundColor: '#0e2a47'}}>
-            <p className="text-9xl">On vous a convaincu ? </p>
-            <p className="text-9xl">Pas besoin de s'engager </p>
-          </AbsoluteFill>
+          <Discord />
         </Series.Sequence>
         <Series.Sequence durationInFrames={t`5s`} name="Join the one be the one">
           <AbsoluteFill style={{backgroundColor: '#0e2a47'}}>
-            <p className="text-9xl">Join the one, be the one</p>
+            <Img src={staticFile('26_JoinTheOne.png')} />
           </AbsoluteFill>
         </Series.Sequence>
         <Series.Sequence durationInFrames={t`4s`} name="Crédits">
           <AbsoluteFill style={{backgroundColor: '#0e2a47'}}>
-            <p className="text-9xl">Crédits</p>
+            <Img src={staticFile('27_Credits.png')} />
           </AbsoluteFill>
         </Series.Sequence>
       </Series>
