@@ -3,11 +3,9 @@ import Logo from './02_LogoReveal/logo';
 
 function LogoReveal() {
   return (
-    <AbsoluteFill
-      style={{backgroundColor: '#0e2a47'}}
-      className="flex items-center justify-center"
-    >
+    <AbsoluteFill style={{backgroundColor: '#0e2a47'}} className="flex items-center justify-center">
       <Logo />
+      <p className="text-9xl text-white">todo : anim logo</p>
     </AbsoluteFill>
   );
 }

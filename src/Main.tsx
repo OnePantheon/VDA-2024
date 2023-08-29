@@ -13,6 +13,8 @@ import Jpo from './Sequences/14_JPO';
 import DesEvents from './Sequences/15_Events';
 import ShowcaseTitle from './Sequences/16_Showcase';
 import Discord from './Sequences/24_Discord';
+import EfreiCraftVid from './Sequences/22_EfreiCraft';
+import ProjetX from './Sequences/17_projetX';
 
 function Main() {
   const t = useTime();
@@ -65,24 +67,18 @@ function Main() {
           <ShowcaseTitle />
         </Series.Sequence>
         <Series.Sequence durationInFrames={t`3.3s`} name="PJ 1">
-          <AbsoluteFill style={{backgroundColor: '#0e2a47'}}>
-            <p className="text-9xl">PJ 1</p>
-          </AbsoluteFill>
+          <ProjetX title="Clyde" author="Par Yohan Sanjivy et Adrien Clemenceau" video="22_Ludos.mp4" />
         </Series.Sequence>
         <Series.Sequence durationInFrames={t`3.3s`} name="PJ 2">
           <AbsoluteFill style={{backgroundColor: '#0e2a47'}}>
-            <p className="text-9xl">PJ 2</p>
+            <ProjetX title="IntelliVote" author="Par Michaël Nass, Vincent Marguet..." video="22_Ludos.mp4" />
           </AbsoluteFill>
         </Series.Sequence>
         <Series.Sequence durationInFrames={t`3.3s`} name="PJ 3">
-          <AbsoluteFill style={{backgroundColor: '#0e2a47'}}>
-            <p className="text-9xl">PJ 3</p>
-          </AbsoluteFill>
+          <ProjetX title="Link Rupees Rush" author="Par Anis Hannachi (2022)" video="22_Ludos.mp4" />
         </Series.Sequence>
         <Series.Sequence durationInFrames={t`3.3s`} name="PJ 4">
-          <AbsoluteFill style={{backgroundColor: '#0e2a47'}}>
-            <p className="text-9xl">PJ 4</p>
-          </AbsoluteFill>
+          <ProjetX title="Kagescan-cms" author="Par Logan Tann (2023)" video="22_Ludos.mp4" />
         </Series.Sequence>
         <Series.Sequence durationInFrames={t`2.5s`} name="Efrei Craft">
           <AbsoluteFill style={{backgroundColor: '#4392B2'}}>
@@ -90,10 +86,7 @@ function Main() {
           </AbsoluteFill>
         </Series.Sequence>
         <Series.Sequence durationInFrames={t`4.5s`} name="Minecraft 1 et 2">
-          <AbsoluteFill style={{backgroundColor: '#0e2a47'}}>
-            <p className="text-9xl">Un serveur où vous pourrez jouer</p>
-            <p className="text-9xl">Tout comme programmer</p>
-          </AbsoluteFill>
+          <EfreiCraftVid />
         </Series.Sequence>
         <Series.Sequence durationInFrames={t`6s`} name="Discord 1 et 2">
           <Discord />
