@@ -41,7 +41,7 @@ function RejoinsAsso() {
         </p>
       </div>
       <Sequence from={t`2s`} durationInFrames={t`1.3s`}>
-        <Video src={CombienAsset} className="absolute z-40 w-1/3 h-auto bottom-20 left-16" />
+        <Video src={CombienAsset} className="absolute z-40 w-1/3 h-auto bottom-20 left-16" volume={2} />
         <p className="absolute bottom-20 left-16 z-50 text-4xl w-1/3 text-center font-bold">Combien ??</p>
       </Sequence>
     </AbsoluteFill>

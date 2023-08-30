@@ -15,6 +15,8 @@ import ShowcaseTitle from './Sequences/16_Showcase';
 import Discord from './Sequences/24_Discord';
 import EfreiCraftVid from './Sequences/22_EfreiCraft';
 import ProjetX from './Sequences/17_projetX';
+import EfreiCraftTitle from './Sequences/21_EfreiCraftTitle';
+import AhBahJsuisRavi from './Sequences/99_ravi';
 
 function Main() {
   const t = useTime();
@@ -50,9 +52,7 @@ function Main() {
           <DesLicences />
         </Series.Sequence>
         <Series.Sequence durationInFrames={t`1.7s`} name="Mais c'est super ça">
-          <AbsoluteFill style={{backgroundColor: '#0e2a47'}}>
-            <Video src={staticFile('ahBahJsuisRavi.mp4')} startFrom={t`3s`} endAt={t`4.8s`} />
-          </AbsoluteFill>
+          <AhBahJsuisRavi />
         </Series.Sequence>
         <Series.Sequence durationInFrames={t`1.6s`} name="Suis nos cours">
           <DesCours />
@@ -67,23 +67,23 @@ function Main() {
           <ShowcaseTitle />
         </Series.Sequence>
         <Series.Sequence durationInFrames={t`3.3s`} name="PJ 1">
-          <ProjetX title="Clyde" author="Par Yohan Sanjivy et Adrien Clemenceau" video="22_Ludos.mp4" />
+          <ProjetX title="Clyde" author="Par Yohan Sanjivy et Adrien Clemenceau." video="17_Clyde.mp4" />
         </Series.Sequence>
         <Series.Sequence durationInFrames={t`3.3s`} name="PJ 2">
-          <AbsoluteFill style={{backgroundColor: '#0e2a47'}}>
-            <ProjetX title="IntelliVote" author="Par Michaël Nass, Vincent Marguet..." video="22_Ludos.mp4" />
-          </AbsoluteFill>
+          <ProjetX
+            title="IntelliVote"
+            author="Par Michaël Nass, Vincent Marguet & contributeurs..."
+            video="18_IntelliVote.mp4"
+          />
         </Series.Sequence>
         <Series.Sequence durationInFrames={t`3.3s`} name="PJ 3">
-          <ProjetX title="Link Rupees Rush" author="Par Anis Hannachi (2022)" video="22_Ludos.mp4" />
+          <ProjetX title="Covoit' Efrei" author="Par Esteban Vincent (2023)" video="ahBahJsuisRavi.mp4" />
         </Series.Sequence>
         <Series.Sequence durationInFrames={t`3.3s`} name="PJ 4">
-          <ProjetX title="Kagescan-cms" author="Par Logan Tann (2023)" video="22_Ludos.mp4" />
+          <ProjetX title="Kagescan-cms" author="Par Logan Tann (2023)" video="20_Kagescan.mp4" />
         </Series.Sequence>
         <Series.Sequence durationInFrames={t`2.5s`} name="Efrei Craft">
-          <AbsoluteFill style={{backgroundColor: '#4392B2'}}>
-            <Img src={staticFile('21_EfreiCraft.png')} />
-          </AbsoluteFill>
+          <EfreiCraftTitle />
         </Series.Sequence>
         <Series.Sequence durationInFrames={t`4.5s`} name="Minecraft 1 et 2">
           <EfreiCraftVid />

@@ -26,6 +26,7 @@ function ProjetX({title, author, video}: ProjetXProps) {
           src={videoFile}
           className="h-[45rem] rounded-3xl"
           style={{transform: `translateX(${videoTranslation}rem)`, opacity}}
+          volume={0}
         />
       </div>
       <div style={{transform: `translateX(${videoTranslation}rem)`, opacity}} className="my-auto">
