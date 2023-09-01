@@ -1,45 +1,76 @@
 import {evolvePath} from '@remotion/paths';
-import {LogoPaths} from './paths';
-import {useCurrentFrame} from 'remotion';
-import {useTime} from 'remotion-time';
+import {LogoPaths, O, i, I} from './paths';
+import {Easing, interpolateColors, useCurrentFrame} from 'remotion';
+import {useInterpolate, useTime} from 'remotion-time';
 
 function Logo() {
   const frame = useCurrentFrame();
-  const time = useTime();
-  const progress = frame / time`2s`;
-
+  const t = useTime();
+  const progress = useInterpolate(['start + 2.2s', 'start + 4.2s'], [0, 1], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+    easing: Easing.inOut(Easing.ease),
+  }) as number;
+  const backgroundColor = interpolateColors(
+    frame,
+    [t`start`, t`start + 4.2s`, t`start + 4.4s`, t`end`],
+    ['#DBDFE400', '#DBDFE400', '#DBDFE4FF', '#DBDFE4FF']
+  );
+  const strokeColor = interpolateColors(
+    frame,
+    [t`start`, t`start + 4.2s`, t`start + 4.4s`, t`end`],
+    ['#DBDFE4FF', '#DBDFE4FF', '#DBDFE400', '#DBDFE400']
+  );
+  const circleFillOpacity = useInterpolate(['start', 'start + 0.7s'], [0, 1], {
+    easing: Easing.inOut(Easing.ease),
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  }) as number;
+  const circleOutlineOpacity = useInterpolate(['start + 0.7s', 'start + 1.1s'], [1, 0], {
+    easing: Easing.in(Easing.ease),
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  }) as number;
+  const oneFillOpacity = useInterpolate(['start + 1.7s', 'start + 2.2s'], [0, 1], {
+    easing: Easing.inOut(Easing.ease),
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  }) as number;
   return (
-    <svg width="417" height="222" viewBox="0 0 417 222" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {}
-      <text x={350} y={20} fill="white" fontSize={20}>
-        {frame}
-      </text>
-      {/*     
-    LogoPaths.map((dProp, key) => {
-      const evolution = evolvePath(progress, dProp);
-      return <path
-        key={key}
-        d={dProp}
-        fill="transparent"
-        stroke="white"
-        strokeWidth={2}
-        strokeDasharray={evolution.strokeDasharray}
-        strokeDashoffset={evolution.strokeDashoffset}
-      />;
-    })
-    <path d={p} fill="#DBDFE4" />
-    <path d={a} fill="#DBDFE4" />
-    <path d={n1} fill="#DBDFE4" />
-    <path d={t} fill="#DBDFE4" />
-    <path d={h} fill="#DBDFE4" />
-    <path d={e} fill="#DBDFE4" />
-    <path d={o} fill="#DBDFE4" />
-    <path d={n2} fill="#DBDFE4" />
-    <path d={N} fill="#DBDFE4" />
-    <path d={E} fill="#DBDFE4" />
-    <path d={I} fill="#4392B2" />
-    <path d={i} fill="white" />
-    <path d={O} fill="white" /> */}
+    // 417x222
+    <svg width="500" height="300" viewBox="0 0 500 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <filter id="shadowWhite" x="0" y="0" width="100%" height="100%" filterUnits="userSpaceOnUse">
+        <feOffset dx="42" dy="39" />
+        <feDropShadow dx="0" dy="1" stdDeviation="8" flood-color="#ffffff" flood-opacity={circleOutlineOpacity} />
+      </filter>
+      <filter id="translate" x="0" y="0" width="100%" height="100%" filterUnits="userSpaceOnUse">
+        <feOffset dx="42" dy="39" />
+      </filter>
+
+      <g filter="url(#shadowWhite)" fill="white" fillOpacity={circleFillOpacity}>
+        <path d={O} />
+        <path d={i} />
+      </g>
+      <g filter="url(#translate)" fill="#4392B2" fillOpacity={oneFillOpacity}>
+        <path d={I} />
+      </g>
+
+      <g filter="url(#translate)">
+        {LogoPaths.map((dProp, key) => {
+          const evolution = evolvePath(progress, dProp);
+          return (
+            <path
+              key={key}
+              d={dProp}
+              fill={backgroundColor}
+              stroke={strokeColor}
+              strokeWidth={2}
+              strokeDasharray={evolution.strokeDasharray}
+              strokeDashoffset={evolution.strokeDashoffset}
+            />
+          );
+        })}
+      </g>
     </svg>
   );
 }

@@ -11,7 +11,7 @@ function EnvieDe() {
     extrapolateRight: 'clamp',
     easing: Easing.in(Easing.ease),
   });
-  const opacity = useInterpolate(['end - 0.7s', 'end - 0.5s'], [1, 0], {
+  const opacity = useInterpolate(['start', 'start + 0.1s', 'end - 0.7s', 'end - 0.5s'], [0, 1, 1, 0], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   }) as number;
