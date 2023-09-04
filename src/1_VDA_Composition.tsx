@@ -77,7 +77,7 @@ function Main() {
           />
         </Series.Sequence>
         <Series.Sequence durationInFrames={t`3.3s`} name="PJ 3">
-          <ProjetX title="Covoit' Efrei" author="Par Esteban Vincent (2023)" video="ahBahJsuisRavi.mp4" />
+          <ProjetX title="Covoit' Efrei" author="Par Esteban Vincent (2023)" video="19_Covoit.mp4" />
         </Series.Sequence>
         <Series.Sequence durationInFrames={t`3.3s`} name="PJ 4">
           <ProjetX title="Kagescan-cms" author="Par Logan Tann (2023)" video="20_Kagescan.mp4" />
