@@ -1,54 +1,31 @@
-# Remotion video
+# VDA 2024
 
 <p align="center">
-  <a href="https://github.com/remotion-dev/logo">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-dark.gif">
-      <img alt="Animated Remotion Logo" src="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-light.gif">
-    </picture>
-  </a>
+    <img alt="One Panthéon - Vidéo Des Associations 2024" src="https://media.discordapp.net/attachments/952958941296488503/1148124518775275530/LogoReveal.gif">
 </p>
 
-Welcome to your Remotion project!
+Vidéo de présentation de notre association, version 2024, révision 1. Toutes les frames sont générées avec du code, grâce à Remotion.
 
-## Commands
+## Développement
 
-**Install Dependencies**
+Pour démarrer le projet, vous aurez besoin du runtime node.js et d'un gestionnaire de paquet (dans les exemples ci-dessous vous aurez npm, celui installé par défaut, mais vous êtes libre de prendre autre chose).
 
-```console
-npm i
-```
-
-**Start Preview**
-
-```console
-npm start
-```
-
-**Render video**
+Avant toute chose, installez les dépendances :
 
 ```console
 npm run build
 ```
 
-**Upgrade Remotion**
+Vous pouvez ensuite démarrer l'éditeur vidéo Remotion avec :
 
 ```console
-npm run upgrade
+npm run start
 ```
 
-## Docs
+Pour générer la vidéo, vous pouvez le faire directement sur l'éditeur. Ou bien en utilisant la commande suivante : 
 
-Get started with Remotion by reading the [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
+```console
+npm run build
+```
 
-## Help
-
-We provide help on our [Discord server](https://discord.gg/6VzzNDwUwV).
-
-## Issues
-
-Found an issue with Remotion? [File an issue here](https://github.com/remotion-dev/remotion/issues/new).
-
-## License
-
-Note that for some entities a company license is needed. [Read the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).
+Pour en savoir plus, lisez la [documentation de Remotion](https://www.remotion.dev/docs/the-fundamentals).
